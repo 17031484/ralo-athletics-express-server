@@ -32,7 +32,7 @@ api.get('/hello', (req, res) => {
 app.get('/getAllUsers', async (req, res) => {
   try {
     const client = await pool.connect();
-    const result = await client.query('SELECT * FROM tu_tabla');
+    const result = await client.query('SELECT * FROM usuarios');
     res.json(result.rows);
     client.release();
   } catch (error) {
