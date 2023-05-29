@@ -29,7 +29,7 @@ api.get('/hello', (req, res) => {
   res.status(200).send({ message: 'HELLO FROM SERVER!' });
 });
 
-app.get('/getAllUsers', async (req, res) => {
+api.get('/getAllUsers', async (req, res) => {
   try {
     const client = await pool.connect();
     const result = await client.query('SELECT * FROM usuarios');
